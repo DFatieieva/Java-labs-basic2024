@@ -41,3 +41,11 @@ public class Group {
         students.remove(student);
     }
 }
+ @Override
+    public String toString() {
+
+        return String.format("Group{head=%s, students=%s}",head, students);
+
+    }
+
+}
