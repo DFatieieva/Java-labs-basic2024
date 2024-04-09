@@ -40,4 +40,8 @@ public class University {
     public void setHead(Human head) {
         this.head = head;
     }
+    @Override
+    public String toString() {
+        return "University{" + name + ", " + head + '}';
+    }
 }
