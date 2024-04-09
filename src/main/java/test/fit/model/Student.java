@@ -1,18 +1,47 @@
 package model;
 
 public class Student extends Human {
-    private String studentId; // Додаткове поле для студента
+    private Group group;
 
-    public Student(String name, String surname, String patronymic, Sex gender, String studentId) {
-        super(name, surname, patronymic, gender);
-        this.studentId = studentId;
+    public Student(String name, String surname, String patronymic, Sex gender) {
+        super(name, surname, patronymic, sex);
     }
 
-    public String getStudentId() {
-        return studentId;
+    public Group getGroup() {
+        return group;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public String getSurname() {
+        return super.getSurname();
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+    }
+
+    @Override
+    public void setSurname(String surname) {
+        super.setSurname(surname);
+    }
+
+    @Override
+    public void setPatronymic(String patronymic) {
+        super.setPatronymic(patronymic);
+    }
+
+    @Override
+    public void setSex(Sex gender) {
+        super.setSex(gender);
     }
 }
