@@ -5,6 +5,7 @@ import java.util.List;
 public class Department {
     private String name;
     private List<Group> groups;
+    private Human head;
 
     public Department(String name) {
         this.name = name;
@@ -33,5 +34,13 @@ public class Department {
 
     public void removeGroup(Group group) {
         groups.remove(group);
+    }
+
+    public Human getHead() {
+        return head;
+    }
+
+    public void setHead(Human head) {
+        this.head = head;
     }
 }
