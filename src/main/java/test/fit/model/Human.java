@@ -45,4 +45,8 @@ public class Human {
     public void setSex(Sex gender) {
         this.gender = gender;
     }
+    @Override
+    public String toString() {
+        return "{" + firstName + ", " + lastName + ", " + patronymic + '}';
+    }
 }
