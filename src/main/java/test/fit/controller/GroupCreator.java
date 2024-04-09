@@ -1,22 +1,12 @@
-package model;
-import java.util.ArrayList;
-import java.util.List;
+package controller;
+import model.Group;
+import model.Human;
 
-public class GroupCreator 
-{
-    public Group createGroup(int studentCount, int maxCapacity) {
+public class GroupCreator {
+    public static Group createGroup(String name, Human head) {
         Group group = new Group();
-        StudentCreator studentCreator = new StudentCreator();
-        List<Student> students = new ArrayList<>();
-        for (int i = 0; i < studentCount; i++) {
-            students.add(studentCreator.createTypicalStudent());
-        }
-        group.setStudents(students);
-        group.setMaxCapacity(maxCapacity);
+        group.setName(name);
+        group.setHead(head);
         return group;
-    }
-
-    public Group createTypicalGroup() {
-        return createGroup(3, 10);
     }
 }
