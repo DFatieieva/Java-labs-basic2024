@@ -43,4 +43,8 @@ public class Department {
     public void setHead(Human head) {
         this.head = head;
     }
+    @Override
+    public String toString() {
+        return "Department{" + name + ", " + head + '}';
+    }
 }
