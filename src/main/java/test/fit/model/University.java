@@ -1,10 +1,7 @@
-package model;
-import java.util.ArrayList;
-import java.util.List;
-
 public class University {
     private String name;
     private List<Faculty> faculties;
+    private Human head;
 
     public University(String name) {
         this.name = name;
@@ -33,5 +30,13 @@ public class University {
 
     public void removeFaculty(Faculty faculty) {
         faculties.remove(faculty);
+    }
+
+    public Human getHead() {
+        return head;
+    }
+
+    public void setHead(Human head) {
+        this.head = head;
     }
 }
