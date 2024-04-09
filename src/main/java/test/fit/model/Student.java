@@ -44,4 +44,8 @@ public class Student extends Human {
     public void setSex(Sex gender) {
         super.setSex(gender);
     }
+    @Override
+    public String toString() {
+        return "Student" + super.toString();
+    }
 }
