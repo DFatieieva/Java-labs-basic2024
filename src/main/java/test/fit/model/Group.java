@@ -1,16 +1,24 @@
 package model;
+
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Group {
     private String name;
     private Human head;
+    @SerializedName("students")
     private List<Student> students;
+
+    public Group() {
+    }
 
     public Group(String name, Human head) {
         this.name = name;
         this.head = head;
-        this.students = new ArrayList<>();
+        students = new ArrayList<>();
     }
 
     public String getName() {
@@ -33,19 +41,22 @@ public class Group {
         return students;
     }
 
-    public void addStudent(Student student) {
+    public void addStudent(Student student){
         students.add(student);
     }
 
-    public void removeStudent(Student student) {
-        students.remove(student);
-    }
-}
- @Override
+    @Override
     public String toString() {
-
-        return String.format("Group{head=%s, students=%s}",head, students);
-
+        return "Group{" + name + ", " + head + '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Group group = (Group) o;
+        return Objects.equals(name, group.name) &&
+                Objects.deepEquals(head, group.head) &&
+                Objects.equals(students, group.students);
+    }
 }
