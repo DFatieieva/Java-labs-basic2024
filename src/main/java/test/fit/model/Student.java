@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Objects;
 
 public class Student extends Human {
     private Group group;
@@ -23,5 +24,18 @@ public class Student extends Human {
     @Override
     public String toString() {
         return "Student" + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Student student = (Student) o;
+        return Objects.equals(group.getName(), student.group.getName()) &&
+                Objects.equals(firstName, student.firstName) &&
+                Objects.equals(lastName, student.lastName) &&
+                Objects.equals(patronymic, student.patronymic) &&
+                sex == student.sex;
     }
 }
