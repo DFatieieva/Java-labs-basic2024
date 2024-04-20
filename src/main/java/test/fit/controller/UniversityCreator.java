@@ -1,7 +1,7 @@
 package controller;
 
-import lab_4.Model.Human;
-import lab_4.Model.University;
+import model.Human;
+import model.University;
 
 public class UniversityCreator {
     public static University createUniversity(String name, Human head) {
