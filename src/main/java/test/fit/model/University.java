@@ -1,4 +1,4 @@
-package lab_4.Model;
+package model;
 
 import com.google.gson.annotations.SerializedName;
 
