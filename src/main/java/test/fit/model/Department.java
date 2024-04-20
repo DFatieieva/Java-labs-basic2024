@@ -1,15 +1,25 @@
-package model;
+
+package lab_4.Model;
+
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Department {
     private String name;
-    private List<Group> groups;
     private Human head;
+    @SerializedName("groups")
+    private List<Group> groups;
 
-    public Department(String name) {
+    public Department() {
+    }
+
+    public Department(String name, Human head) {
         this.name = name;
-        this.groups = new ArrayList<>();
+        this.head = head;
+        groups = new ArrayList<>();
     }
 
     public String getName() {
@@ -20,22 +30,6 @@ public class Department {
         this.name = name;
     }
 
-    public List<Group> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<Group> groups) {
-        this.groups = groups;
-    }
-
-    public void addGroup(Group group) {
-        groups.add(group);
-    }
-
-    public void removeGroup(Group group) {
-        groups.remove(group);
-    }
-
     public Human getHead() {
         return head;
     }
@@ -43,8 +37,26 @@ public class Department {
     public void setHead(Human head) {
         this.head = head;
     }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void addGroup(Group group){
+        groups.add(group);
+    }
+
     @Override
     public String toString() {
         return "Department{" + name + ", " + head + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Department that = (Department) o;
+        return Objects.equals(name, that.name) && Objects.deepEquals(head, that.head) &&
+                Objects.deepEquals(groups, that.groups);
     }
 }
